@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+   <meta charset="utf-8">
+   <title>菜鸟教程(runoob.com)</title>
+    
+      <script type="text/javascript">
+            var wsServer = 'ws://134.175.4.18:9502';
+            var websocket = new WebSocket(wsServer);
+            websocket.onopen = function (evt) {
+                console.log("Connected to WebSocket server.");
+            };
+
+            websocket.onclose = function (evt) {
+                console.log("Disconnected");
+            };
+
+            websocket.onmessage = function (evt) {
+                console.log('Retrieved data from server: ' + evt.data);
+            };
+
+            websocket.onerror = function (evt, e) {
+                console.log('Error occured: ' + evt.data);
+            };
+      </script>
+        
+   </head>
+   <body>
+   
+      <div id="sse">
+         <a href="javascript:WebSocketTest()">运行 WebSocket</a>
+      </div>
+      
+   </body>
+</html>
